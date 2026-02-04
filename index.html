@@ -7,6 +7,15 @@
   <meta name="description" content="Custom software development, cloud architecture, and quality engineering supporting mission-critical public health systems.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+  <style>
+    .hero-tech-pattern {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: center;
+    }
+  </style>
 </head>
 
 <body data-theme="corporate" class="font-sans">
@@ -27,7 +36,7 @@
     </div>
   </div>
 
-  <section id="hero" class="hero bg-base-200">
+  <section id="hero" class="hero bg-base-200 hero-tech-pattern">
     <div class="hero-content text-center container mx-auto px-6 py-20">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl font-bold">Senior-level software engineering without the overhead.</h1>
@@ -72,7 +81,7 @@
     </div>
   </section>
 
-  <section id="services" class="bg-base-200">
+  <section id="services" class="bg-base-200 hero-tech-pattern">
     <div class="container mx-auto px-6 py-20">
       <h2 class="text-3xl font-semibold">What We Do</h2>
       <div class="grid gap-6 mt-10 md:grid-cols-3">
@@ -139,7 +148,7 @@
     </div>
   </section>
 
-  <section id="experience" class="bg-base-200">
+  <section id="experience" class="bg-base-200 hero-tech-pattern">
     <div class="container mx-auto px-6 py-20">
       <h2 class="text-3xl font-semibold">Experience You Can Trust</h2>
       <div class="grid gap-6 mt-10 md:grid-cols-2">
@@ -156,7 +165,13 @@
         </div>
         <div class="card bg-base-100 border border-base-200">
           <div class="card-body">
-            <p>Primary client: Centers for Disease Control and Prevention (via Peraton)</p>
+            <p>
+              Primary partner supporting the
+              <a class="link link-primary font-semibold" href="https://www.cdc.gov" target="_blank" rel="noopener noreferrer">Centers for Disease Control and Prevention</a>,
+              working alongside
+              <a class="link link-primary font-semibold" href="https://www.peraton.com" target="_blank" rel="noopener noreferrer">Peraton</a>
+              to deliver reliable, mission-critical public health systems.
+            </p>
           </div>
         </div>
       </div>
