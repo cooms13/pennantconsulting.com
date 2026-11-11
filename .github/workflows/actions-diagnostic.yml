@@ -1,0 +1,15 @@
+name: Actions diagnostic
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  runner-check:
+    name: Check runner startup
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Confirm the runner started
+        run: echo "GitHub Actions started a runner successfully."
