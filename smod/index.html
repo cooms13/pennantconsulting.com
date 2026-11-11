@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Meteor of Death</title>
+    <meta
+      name="description"
+      content="Official site of Sweet Meteor of Death - punk rock from the edge of the atmosphere."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="site-header" id="top">
+      <nav class="nav">
+        <a class="logo" href="#top">
+          <img src="logo.jpg" alt="Sweet Meteor of Death logo" />
+          <span>SWEET METEOR OF DEATH</span>
+        </a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul id="menu" class="menu">
+          <li><a href="#shows">Shows</a></li>
+          <li><a href="#music">Music</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#merch">Merch</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <div class="hero-bg-stage" id="hero-bg-stage" aria-hidden="true">
+          <img class="hero-bg-image hero-bg-image-a" id="hero-bg-image-a" src="" alt="" />
+          <img class="hero-bg-image hero-bg-image-b" id="hero-bg-image-b" src="" alt="" />
+        </div>
+        <div class="meteor-sky" aria-hidden="true">
+          <span class="meteor meteor-1"></span>
+          <span class="meteor meteor-2"></span>
+          <span class="meteor meteor-3"></span>
+        </div>
+        <p class="kicker">Punk Rock // Earth Orbit</p>
+        <img class="hero-logo" src="logo.jpg" alt="Sweet Meteor of Death emblem" />
+        <h1>
+          SWEET<br />
+          METEOR<br />
+          OF DEATH
+        </h1>
+        <p class="tagline">
+          Fast, loud, and heading straight for impact. New demos, wrecked amps, and upcoming shows.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#shows">See Shows</a>
+          <a class="btn btn-secondary" href="#music">Watch + Listen</a>
+        </div>
+      </section>
+
+      <section id="shows" class="panel reveal">
+        <div class="panel-head">
+          <h2>Shows</h2>
+          <p>Next impacts on the map.</p>
+        </div>
+        <div class="shows-grid" id="shows-list"></div>
+      </section>
+
+      <section id="music" class="panel reveal">
+        <div class="panel-head">
+          <h2>Music + Video</h2>
+          <p>Drop in your latest clips or embeds here.</p>
+        </div>
+        <div class="media-grid" id="media-list"></div>
+      </section>
+
+      <section id="videos" class="panel reveal">
+        <div class="panel-head">
+          <h2>Videos</h2>
+          <p>Paste YouTube links in content.js and they auto-embed.</p>
+        </div>
+        <div class="media-grid" id="videos-list"></div>
+      </section>
+
+      <section id="gallery" class="panel reveal">
+        <div class="panel-head">
+          <h2>Gallery</h2>
+          <p>Quick placeholders for photos from Instagram.</p>
+        </div>
+        <div class="gallery-grid" id="gallery-list"></div>
+      </section>
+
+      <section id="merch" class="panel reveal">
+        <div class="panel-head">
+          <h2>Merch</h2>
+          <p>Fast drop section for tees, patches, and tapes.</p>
+        </div>
+        <div class="merch-row" id="merch-list"></div>
+      </section>
+
+      <section id="contact" class="panel reveal contact">
+        <div>
+          <h2>Contact / Booking</h2>
+          <p>Bookings, collabs, chaos:</p>
+          <a class="contact-link" href="mailto:booking@sweetmeteorofdeath.com">booking@sweetmeteorofdeath.com</a>
+          <p>
+            Instagram:
+            <a href="https://www.instagram.com/sweetmeteorofdeath/" target="_blank" rel="noreferrer">@sweetmeteorofdeath</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Sweet Meteor of Death // Stay loud.</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close image">Close</button>
+      <img id="lightbox-image" src="" alt="Expanded gallery image" />
+    </div>
+
+    <script src="content.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
