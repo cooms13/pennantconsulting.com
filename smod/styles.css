@@ -155,7 +155,7 @@ main {
   animation: hero-wink-hover 4.8s ease;
 }
 
-.meteor-sky {
+.meteor-sky { 
   --meteor-travel: clamp(320px, 55vw, 680px);
   position: absolute;
   inset: 0;
