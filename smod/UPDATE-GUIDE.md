@@ -40,7 +40,7 @@ In content.js, keep these settings turned on:
 galleryAutoFromPictures: true
 galleryDirectoryPath: "pictures/"
 
-Optional: if no files are found in pictures/, it falls back to the manual gallery list in content.js.
+If the gallery manifest is empty or unavailable, the page falls back to the manual gallery list in content.js.
 
 Manual fallback list is still in content.js under gallery.
 Local image paths are relative to `smod/index.html`, for example `pictures/live-show.jpg`.
@@ -118,15 +118,15 @@ Each merch item looks like this:
 
 ## 5) Preview the Site
 
-Open index.html in a browser.
+From the repository root, run a local server so the browser can load the image manifests:
 
-For best results, run a local server:
-
+```sh
 python3 -m http.server 8000
+```
 
 Then open:
 
-http://localhost:8000
+http://localhost:8000/smod/
 
 ## 6) What not to edit
 

@@ -57,7 +57,7 @@ window.siteContent = {
     {
       title: "Live Clip 01",
       description: "A cool video of SMOD.",
-      youtubeUrl: "https://youtube.com/shorts/kjC2KXmvddQ?is=mqO0YhkjlKZAJI0x"
+      youtubeUrl: "https://www.youtube.com/watch?v=kjC2KXmvddQ"
     },
     {
       title: "Practice Room Chaos",
