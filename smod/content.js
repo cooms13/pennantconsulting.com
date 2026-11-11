@@ -78,7 +78,7 @@ window.siteContent = {
 
   gallery: [
     {
-      src: "live-show.jpg",
+      src: "pictures/live-show.jpg",
       alt: "Band performing on stage"
     },
     {

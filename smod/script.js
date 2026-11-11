@@ -196,30 +196,6 @@ function cleanDirectoryPath(path) {
   return path.endsWith('/') ? path : `${path}/`;
 }
 
-function extractImageNamesFromDirectoryListing(htmlText) {
-  const parser = new DOMParser();
-  const documentHtml = parser.parseFromString(htmlText, 'text/html');
-
-  const imageNames = [];
-  documentHtml.querySelectorAll('a[href]').forEach((anchor) => {
-    const href = anchor.getAttribute('href') || '';
-    const cleanHref = href.split('#')[0].split('?')[0];
-
-    if (!cleanHref || cleanHref.endsWith('/') || cleanHref === '../') {
-      return;
-    }
-
-    const fileName = decodeURIComponent(cleanHref.split('/').pop() || '');
-    if (!fileName || !IMAGE_FILE_PATTERN.test(fileName)) {
-      return;
-    }
-
-    imageNames.push(fileName);
-  });
-
-  return [...new Set(imageNames)];
-}
-
 async function loadGalleryFromPicturesDirectory(content) {
   const directoryPath = cleanDirectoryPath(content.galleryDirectoryPath || 'pictures/');
 
@@ -230,18 +206,23 @@ async function loadImagesFromDirectory(rawDirectoryPath, defaultAlt) {
   const directoryPath = cleanDirectoryPath(rawDirectoryPath);
 
   try {
-    const response = await fetch(directoryPath, { cache: 'no-store' });
+    // Static hosts serve files, but do not necessarily expose directory listings.
+    const response = await fetch(`${directoryPath}images.json`, { cache: 'no-store' });
     if (!response.ok) {
       return [];
     }
 
-    const bodyText = await response.text();
-    const imageNames = extractImageNamesFromDirectoryListing(bodyText);
+    const imageNames = await response.json();
+    if (!Array.isArray(imageNames)) {
+      return [];
+    }
 
-    return imageNames.map((name) => ({
-      src: `${directoryPath}${encodeURIComponent(name)}`,
-      alt: defaultAlt || 'Band photo'
-    }));
+    return imageNames
+      .filter((name) => typeof name === 'string' && IMAGE_FILE_PATTERN.test(name))
+      .map((name) => ({
+        src: `${directoryPath}${encodeURIComponent(name)}`,
+        alt: defaultAlt || 'Band photo'
+      }));
   } catch (error) {
     return [];
   }

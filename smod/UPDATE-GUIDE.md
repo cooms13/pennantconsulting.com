@@ -1,6 +1,6 @@
 # Sweet Meteor of Death Site Update Guide
 
-This site is set up so you only need to edit one file:
+For text, links, and manual image lists, edit:
 
 - content.js
 
@@ -25,9 +25,15 @@ To add another show, copy one block, paste it below, and change text.
 Put image files into the pictures folder.
 
 - Folder: pictures/
-- Supported types: .jpg, .jpeg, .png, .webp, .gif, .svg
+- Supported types: .jpg, .jpeg, .png, .webp, .gif, .svg, .avif, .bmp (case-insensitive)
 
-The gallery now auto-loads images from that folder.
+After adding, renaming, or removing photos, run this command from the repository root:
+
+```sh
+python3 smod/generate-image-manifests.py
+```
+
+Publish the updated `pictures/images.json` and `pictures-hero/images.json` files along with your photos. The page loads filenames from these manifests because static hosts do not necessarily support directory listings.
 
 In content.js, keep these settings turned on:
 
@@ -37,6 +43,7 @@ galleryDirectoryPath: "pictures/"
 Optional: if no files are found in pictures/, it falls back to the manual gallery list in content.js.
 
 Manual fallback list is still in content.js under gallery.
+Local image paths are relative to `smod/index.html`, for example `pictures/live-show.jpg`.
 
 ## 2b) Update Hero Background Photos
 
@@ -45,6 +52,7 @@ Put hero photos into the pictures-hero folder.
 - Folder: pictures-hero/
 - The hero rotates one image at a time automatically.
 - Photos fade in and hover behind the meteors.
+- Run `python3 smod/generate-image-manifests.py` from the repository root after changing these photos, then publish the updated photos and manifests.
 
 Optional settings in content.js:
 
@@ -123,4 +131,4 @@ http://localhost:8000
 ## 6) What not to edit
 
 Avoid editing index.html unless you want layout/design changes.
-Regular updates should only happen in content.js.
+Regular text and link updates should happen in content.js. After changing photo files, regenerate and publish the image manifests as described above.
